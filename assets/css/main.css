@@ -2893,9 +2893,9 @@ input[type=number] {
     gap: 24px;
 }
 
-.nav-menu__item.activePage > a {
+/* .nav-menu__item.activePage > a {
     color: hsl(var(--main));
-}
+} */
 
 .nav-menu__item.activePage > a::before {
     color: hsl(var(--main));
