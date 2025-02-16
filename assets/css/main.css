@@ -44,16 +44,16 @@
 /* ========================= Variable Css Start ======================== */
 :root {
   /* Font Family Variable */
-    --heading-font: "Poppins", sans-serif;
-    --body-font: "Poppins", sans-serif;
-    --poppins-font: "Poppins", sans-serif;
+    --heading-font: "Sakkal Majalla", sans-serif;
+    --body-font: "Sakkal Majalla", sans-serif;
+    --poppins-font: "Sakkal Majalla", sans-serif;
   /* Font Size Variable Start */
-    --heading-one: clamp(2rem, -0.0733rem + 6.3692vw, 4.25rem);
-    --heading-two: clamp(1.75rem, 0.7133rem + 2.8846vw, 2.875rem);
-    --heading-three: clamp(1.5rem, 0.3353rem + 2.1661vw, 2.5rem);
-    --heading-four: clamp(1.25rem, 0.5569rem + 1.444vw, 2rem);
-    --heading-five: clamp(1.125rem, 1.2rem + 0.722vw, 1.75rem);
-    --heading-six: clamp(1rem, 0.769rem + 0.6813vw, 1.25rem);
+    --heading-one: clamp(2.6rem, -0.0953rem + 8.27996vw, 5.525rem);
+    --heading-two: clamp(2.275rem, 0.9273rem + 3.74998vw, 3.7375rem);
+    --heading-three: clamp(1.95rem, 0.4359rem + 2.81593vw, 3.25rem);
+    --heading-four: clamp(1.625rem, 0.724rem + 1.8772vw, 2.6rem);
+    --heading-five: clamp(1.4625rem, 1.56rem + 0.9386vw, 2.275rem);
+    --heading-six: clamp(1.3rem, 0.9997rem + 0.88569vw, 1.625rem);
   /* Font Size End */
   /* Color Variables Start */
     --main-gradient: linear-gradient(90deg, #F69220 0.04%, #F68E20 28.67%, #F48421 54.05%, #F37221 78.11%, #F05A22 100.04%);
@@ -124,6 +124,16 @@
 /* Font Size For responsive devices Start */
 /* Font Size For responsive devices End */
 /* ============================ Mixins Css End ============================ */
+
+
+@font-face {
+    font-family: "Sakkal Majalla";
+    src:url('../font/majallab.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+
 /* ================================= Classes Css Start =========================== */
 @media (min-width: 1199px) {
     .container-two {
@@ -1955,7 +1965,7 @@ button:focus {
 
 .common-input::placeholder {
     color: var(--gray-800);
-    font-size: 0.875rem;
+    font-size: 1.3rem;
     transition: 0.25s linear;
     font-weight: 400;
 }
@@ -2048,7 +2058,7 @@ button:focus {
 }
 
 .common-input::placeholder {
-    font-size: clamp(0.9375rem, 0.709rem + 0.475vw, 1.125rem) !important;
+    font-size: clamp(1.3rem, 1.3rem + 0.700vw, 1.3rem) !important;
 }
 
 .common-input--light {
@@ -2904,10 +2914,11 @@ input[type=number] {
 .nav-menu__link {
     color: hsl(var(--heading-color));
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.3rem;
     width: 100%;
     padding: 38px 0;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .has-submenu {
@@ -3260,7 +3271,7 @@ input[type=number] {
 .mobile-menu {
     position: fixed;
     background-color: hsl(var(--white));
-    width: 300px;
+    width: 350px;
     height: 100vh;
     overflow-y: auto;
     padding: 24px;
@@ -6479,7 +6490,7 @@ button.slick-next {
 
 .newsletter-content__form .common-input::placeholder {
     color: hsl(var(--white));
-    font-size: 16px !important;
+    font-size: 24px !important;
     font-weight: 400;
 }
 
@@ -9049,7 +9060,7 @@ p.account-alert:last-child {
 }
 
 .search-box--sm .common-input::placeholder {
-    font-size: 13px !important;
+    font-size: 26px !important;
 }
 
 .search-box--sm .icon {
@@ -9542,3 +9553,39 @@ p.account-alert:last-child {
 }
 /* ============================ Pricing Plan Css End ================================ */
 /*# sourceMappingURL=main.css.map */
+
+.no-arrow::after {
+    display: none !important;
+}
+
+/* Style for the search dropdown */
+.search-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the search icon */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.search-dropdown .search-input {
+    width: 200px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Font Awesome icons */
+.nav-menu__link .fas {
+    font-size: 1.2rem;
+    color: #000; /* Adjust icon color */
+}
+
+/* Show the search dropdown when active */
+.search-dropdown.active {
+    display: block;
+}
