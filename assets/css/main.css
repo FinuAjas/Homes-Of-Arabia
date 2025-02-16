@@ -9554,38 +9554,52 @@ p.account-alert:last-child {
 /* ============================ Pricing Plan Css End ================================ */
 /*# sourceMappingURL=main.css.map */
 
+
+/* Custom CSS */
+
 .no-arrow::after {
     display: none !important;
 }
 
-/* Style for the search dropdown */
-.search-dropdown {
+/* Custom Modal Styles */
+.custom-modal {
     display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%; /* Position below the search icon */
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
     z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
 }
 
-.search-dropdown .search-input {
-    width: 200px;
-    padding: 5px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.custom-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Font Awesome icons */
-.nav-menu__link .fas {
-    font-size: 1.2rem;
-    color: #000; /* Adjust icon color */
+.custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-/* Show the search dropdown when active */
-.search-dropdown.active {
-    display: block;
+.custom-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.custom-modal-body {
+    padding: 10px 0;
 }

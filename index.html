@@ -66,9 +66,14 @@
                     <li class="nav-menu__item">
                         <a href="" class="nav-menu__link" style="font: bold;">Luxe Services</a>
                     </li>
+
+                    <li class="nav-menu__item">
+                        <a href="" class="nav-menu__link">Login/SignUp <i class="fas fa-user" style="font-size: 14px;"></i></a>
+                    </li>
+
                 </ul>
                 <button class="btn btn-outline-light dropdown-toggle no-arrow" type="button" id="gccDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.3rem;">
+                    data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.3rem; margin-top: 2%;">
                     OMAN (Choose Country)
                     <span class="icon-right text-gradient icon">
                         <i class="fas fa-arrow-down"></i>
@@ -86,54 +91,6 @@
         </div>
     </div>
     <!-- ==================== Mobile Menu End Here ==================== -->
-
-    <div class="floating-chat">
-        <button type="button" class="floating-chat__icon">
-            <i class="fa fa-comments"></i>
-        </button>
-
-        <div class="floating-chat__box">
-            <div class="floating-chat__box--inner">
-                <div class="floating-chat__header">
-                    <span class="floating-chat____title"> What's on your mind? </span>
-                    <button class="floating-chat__close">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
-                <ul class="floating-chat__list">
-                    <li class="floating-chat__item other">
-                        <img src="assets/images/thumbs/user-img1.png" alt="" class="floating-chat__img">
-                        <p class="floating-chat__text">Hey! How are you doing?</p>
-                    </li>
-                    <li class="floating-chat__item self">
-                        <img src="assets/images/thumbs/user-img2.png" alt="" class="floating-chat__img">
-                        <p class="floating-chat__text">Hello! I am doing well</p>
-                    </li>
-                    <li class="floating-chat__item other">
-                        <img src="assets/images/thumbs/user-img1.png" alt="" class="floating-chat__img">
-                        <p class="floating-chat__text">Hey! How are you doing?</p>
-                    </li>
-                    <li class="floating-chat__item self">
-                        <img src="assets/images/thumbs/user-img2.png" alt="" class="floating-chat__img">
-                        <p class="floating-chat__text">Hello! I am doing well</p>
-                    </li>
-                    <li class="floating-chat__item other">
-                        <img src="assets/images/thumbs/user-img1.png" alt="" class="floating-chat__img">
-                        <p class="floating-chat__text">Hey! How are you doing?</p>
-                    </li>
-                    <li class="floating-chat__item self">
-                        <img src="assets/images/thumbs/user-img2.png" alt="" class="floating-chat__img">
-                        <p class="floating-chat__text">Hello! I am doing well</p>
-                    </li>
-                </ul>
-                <div class="floating-chat__footer">
-                    <input type="text" class="common-input common-input--sm flex-grow-1" placeholder="Write Message">
-                    <button class="btn btn-main btn-sm flex-shrink-0">send</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <main class="body-bg">
         <!-- ==================== Header Top Start Here ==================== -->
@@ -174,8 +131,7 @@
 
                     <!-- Menu Start  -->
                     <div class="header-menu d-lg-block d-none">
-
-                        <ul class="nav-menu flx-align ">
+                        <ul class="nav-menu flx-align">
                             <li class="nav-menu__item">
                                 <a href="" class="nav-menu__link">Real Estate</a>
                             </li>
@@ -184,6 +140,9 @@
                             </li>
                             <li class="nav-menu__item">
                                 <a href="" class="nav-menu__link">Luxe Services</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="" class="nav-menu__link">Login/SignUp <i class="fas fa-user" style="font-size: 14px;"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -209,6 +168,10 @@
                                 <li><a class="dropdown-item" href="">Bahrain</a></li>
                             </ul>
                         </div>
+
+                        <button type="button" class="btn btn-outline-light ms-3" id="searchButton">
+                            <i class="fas fa-search" style="font-size: 18px;"></i>
+                        </button>
 
                         <button type="button" class="toggle-mobileMenu d-lg-none ms-3"> <i class="las la-bars"></i>
                         </button>
@@ -1045,7 +1008,6 @@
         </section>
         <!-- ==================== Blog End Here ==================== -->
 
-
         <!-- ==================== Footer Two Start Here ==================== -->
         <footer class="footer footer-two padding-y-120">
             <div class="container container-two">
@@ -1122,6 +1084,26 @@
         </div>
         <!-- ==================== Footer Two End Here ==================== -->
 
+        <!-- Search Modal -->
+        <div id="searchModal" class="custom-modal">
+            <div class="custom-modal-content">
+                <div class="custom-modal-header">
+                    <h5>Search</h5>
+                    <button id="closeModal" class="custom-modal-close">&times;</button>
+                </div>
+                <div class="custom-modal-body">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search" style="font-size: 1.3rem;">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- Jquery js -->
@@ -1146,6 +1128,30 @@
 
     <!-- main js -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Get references to the modal, button, and close button
+        const searchModal = document.getElementById('searchModal');
+        const searchButton = document.getElementById('searchButton');
+        const closeModal = document.getElementById('closeModal');
+
+        // Open the modal when the search button is clicked
+        searchButton.addEventListener('click', () => {
+            searchModal.style.display = 'flex';
+        });
+
+        // Close the modal when the close button is clicked
+        closeModal.addEventListener('click', () => {
+            searchModal.style.display = 'none';
+        });
+
+        // Close the modal when clicking outside the modal content
+        window.addEventListener('click', (event) => {
+            if (event.target === searchModal) {
+                searchModal.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 
